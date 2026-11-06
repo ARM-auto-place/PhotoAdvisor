@@ -1,0 +1,16 @@
+.venv
+.uv-cache
+.git
+.env
+.docker-local
+models
+datasets
+reports
+data
+__pycache__
+.pytest_cache
+.ruff_cache
+tests
+examples
+*.zip
+Фото для проверки пилота

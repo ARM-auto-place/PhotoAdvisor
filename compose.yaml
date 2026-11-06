@@ -1,0 +1,46 @@
+services:
+  advisor:
+    build: .
+    env_file: ${PHOTO_ADVISOR_ENV_FILE:-.env}
+    ports:
+      - "127.0.0.1:8000:8000"
+    volumes:
+      - ./models:/service/models:ro
+      - advisor-state:/service/data
+    stop_grace_period: 10m
+    restart: unless-stopped
+    mem_limit: 3g
+    cpus: 2
+    security_opt:
+      - no-new-privileges:true
+    read_only: true
+    tmpfs:
+      - /tmp:size=64m
+  prepare-models:
+    build: .
+    profiles: [tools]
+    environment:
+      HF_HUB_OFFLINE: "0"
+      TRANSFORMERS_OFFLINE: "0"
+      HF_HOME: /service/models/hf-cache
+    volumes:
+      - ./models:/service/models
+    command: [python, scripts/prepare_models.py]
+  minio:
+    build:
+      context: .
+      dockerfile: docker/minio.Dockerfile
+    profiles: [local]
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER:-}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:-}
+    ports:
+      - "127.0.0.1:9000:9000"
+      - "127.0.0.1:9001:9001"
+    command: server /data --console-address :9001
+    volumes:
+      - minio-data:/data
+    restart: unless-stopped
+volumes:
+  minio-data:
+  advisor-state:

@@ -1,0 +1,3 @@
+# Optional local dataset preparation; not needed by the production image.
+-r requirements-dev.txt
+pyarrow==19.0.1

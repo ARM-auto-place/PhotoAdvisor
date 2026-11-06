@@ -1,0 +1,293 @@
+{
+  "version": 1,
+  "categories": [
+    {
+      "id": "front",
+      "priority": "required",
+      "title": {
+        "ru": "Перед автомобиля",
+        "en": "Front"
+      },
+      "hint": {
+        "ru": "Автомобиль спереди целиком, камера по центру.",
+        "en": "Photograph the entire car from the front."
+      },
+      "conditional": false
+    },
+    {
+      "id": "rear",
+      "priority": "required",
+      "title": {
+        "ru": "Зад автомобиля",
+        "en": "Rear"
+      },
+      "hint": {
+        "ru": "Автомобиль сзади целиком, камера по центру.",
+        "en": "Photograph the entire car from the rear."
+      },
+      "conditional": false
+    },
+    {
+      "id": "left_side",
+      "priority": "required",
+      "title": {
+        "ru": "Левая сторона",
+        "en": "Left side"
+      },
+      "hint": {
+        "ru": "Снимите левую сторону целиком, слева по ходу движения.",
+        "en": "Photograph the complete vehicle left side, relative to forward travel."
+      },
+      "conditional": false
+    },
+    {
+      "id": "right_side",
+      "priority": "required",
+      "title": {
+        "ru": "Правая сторона",
+        "en": "Right side"
+      },
+      "hint": {
+        "ru": "Снимите правую сторону целиком, справа по ходу движения.",
+        "en": "Photograph the complete vehicle right side, relative to forward travel."
+      },
+      "conditional": false
+    },
+    {
+      "id": "body_condition",
+      "priority": "required",
+      "title": {
+        "ru": "Состояние кузова",
+        "en": "Body condition"
+      },
+      "hint": {
+        "ru": "Добавьте отдельный резкий снимок панели кузова и ЛКП при ровном освещении.",
+        "en": "Add a separate sharp, well-lit close-up of a body panel and paintwork."
+      },
+      "conditional": false
+    },
+    {
+      "id": "interior_front",
+      "priority": "recommended",
+      "title": {
+        "ru": "Передний ряд салона",
+        "en": "Front interior"
+      },
+      "hint": {
+        "ru": "Снимите передние сиденья и пространство переднего ряда.",
+        "en": "Photograph the front seats and front cabin."
+      },
+      "conditional": false
+    },
+    {
+      "id": "interior_rear",
+      "priority": "recommended",
+      "title": {
+        "ru": "Задний ряд салона",
+        "en": "Rear interior"
+      },
+      "hint": {
+        "ru": "Снимите задние сиденья.",
+        "en": "Photograph the rear seats."
+      },
+      "conditional": false
+    },
+    {
+      "id": "dashboard",
+      "priority": "recommended",
+      "title": {
+        "ru": "Приборная панель",
+        "en": "Dashboard"
+      },
+      "hint": {
+        "ru": "Снимите приборную панель целиком.",
+        "en": "Photograph the complete dashboard."
+      },
+      "conditional": false
+    },
+    {
+      "id": "odometer",
+      "priority": "recommended",
+      "title": {
+        "ru": "Одометр",
+        "en": "Odometer"
+      },
+      "hint": {
+        "ru": "Снимите читаемое показание пробега на приборной панели.",
+        "en": "Photograph a legible mileage reading on the instrument cluster."
+      },
+      "conditional": false
+    },
+    {
+      "id": "trunk",
+      "priority": "recommended",
+      "title": {
+        "ru": "Багажник",
+        "en": "Trunk"
+      },
+      "hint": {
+        "ru": "Откройте багажник и снимите пространство внутри.",
+        "en": "Open the trunk and photograph the cargo space."
+      },
+      "conditional": false
+    },
+    {
+      "id": "engine_bay",
+      "priority": "recommended",
+      "title": {
+        "ru": "Моторный отсек",
+        "en": "Engine bay"
+      },
+      "hint": {
+        "ru": "Откройте капот и снимите моторный отсек.",
+        "en": "Open the hood and photograph the engine bay."
+      },
+      "conditional": false
+    },
+    {
+      "id": "wheels",
+      "priority": "recommended",
+      "title": {
+        "ru": "Колёса и шины",
+        "en": "Wheels and tires"
+      },
+      "hint": {
+        "ru": "Снимите колесо и протектор шины крупным планом.",
+        "en": "Photograph a wheel and tire tread close-up."
+      },
+      "conditional": false
+    },
+    {
+      "id": "exterior_details",
+      "priority": "recommended",
+      "title": {
+        "ru": "Детали экстерьера",
+        "en": "Exterior details"
+      },
+      "hint": {
+        "ru": "Добавьте снимки деталей экстерьера.",
+        "en": "Add photographs of exterior details."
+      },
+      "conditional": false
+    },
+    {
+      "id": "damage",
+      "priority": "recommended",
+      "title": {
+        "ru": "Видимые дефекты",
+        "en": "Visible damage"
+      },
+      "hint": {
+        "ru": "Если есть повреждения, добавьте их крупные планы.",
+        "en": "If any damage exists, add close-up photographs of it."
+      },
+      "conditional": true
+    }
+  ],
+  "classes": {
+    "front": [
+      "a photo of the front of a car, headlights and front grille visible",
+      "a head-on front view of a parked automobile"
+    ],
+    "rear": [
+      "a photo of the rear of a car with taillights and trunk lid",
+      "a straight rear view of a parked automobile"
+    ],
+    "left_side": [
+      "a full left side profile of a car, front pointing left",
+      "a photo of the driver side profile of a left hand drive car"
+    ],
+    "right_side": [
+      "a full right side profile of a car, front pointing right",
+      "a photo of the passenger side profile of a left hand drive car"
+    ],
+    "body_condition": [
+      "a detailed close-up photograph of car body panel paintwork condition",
+      "a sharp close-up of the paint surface of a car door or fender"
+    ],
+    "interior_front": [
+      "a photograph of the front seats inside a car cabin",
+      "a view inside a car showing the front seating row"
+    ],
+    "interior_rear": [
+      "a photograph of the rear seats inside a car",
+      "a view of the back seating row of an automobile interior"
+    ],
+    "dashboard": [
+      "a photo of a car dashboard with steering wheel and instrument panel",
+      "a wide view of an automobile dashboard and center console"
+    ],
+    "odometer": [
+      "a close-up of the car odometer mileage display",
+      "a close-up photograph of the instrument cluster showing mileage"
+    ],
+    "trunk": [
+      "a photograph of an open car trunk cargo space",
+      "the inside of a car luggage compartment with trunk open"
+    ],
+    "engine_bay": [
+      "a photo of a car engine bay with the hood open",
+      "a view under the open hood showing an automobile engine"
+    ],
+    "wheels": [
+      "a close-up photograph of a car wheel and tire tread",
+      "a detailed photo of an automobile tire and wheel rim"
+    ],
+    "exterior_details": [
+      "a close-up photo of a car headlight or side mirror",
+      "a detailed photo of automobile exterior trim"
+    ],
+    "damage": [
+      "a close-up photograph of a scratched dented damaged car body panel",
+      "a photo of visible collision damage or scratches on a car"
+    ],
+    "front_left": [
+      "a front left three-quarter view of a complete car",
+      "a parked automobile photographed diagonally from the front left corner"
+    ],
+    "front_right": [
+      "a front right three-quarter view of a complete car",
+      "a parked automobile photographed diagonally from the front right corner"
+    ],
+    "rear_left": [
+      "a rear left three-quarter view of a complete car",
+      "a parked automobile photographed diagonally from the rear left corner"
+    ],
+    "rear_right": [
+      "a rear right three-quarter view of a complete car",
+      "a parked automobile photographed diagonally from the rear right corner"
+    ],
+    "other": [
+      "a photo of a person, animal, food, document, or landscape without a car",
+      "a screenshot, drawing, advertisement or unrelated object"
+    ]
+  },
+  "coverage": {
+    "front": "front",
+    "rear": "rear",
+    "left_side": "left_side",
+    "right_side": "right_side",
+    "body_condition": "body_condition",
+    "interior_front": "interior_front",
+    "interior_rear": "interior_rear",
+    "dashboard": "dashboard",
+    "odometer": "odometer",
+    "trunk": "trunk",
+    "engine_bay": "engine_bay",
+    "wheels": "wheels",
+    "exterior_details": "exterior_details",
+    "damage": "damage"
+  },
+  "messages": {
+    "ru": {
+      "duplicates": "Несколько фотографий повторяются. Добавьте другие ракурсы.",
+      "quality": "Некоторые фотографии нечёткие или плохо различимы. Переснимите их.",
+      "uncertain": "Не удалось уверенно определить содержимое части фотографий. Добавьте более понятные снимки."
+    },
+    "en": {
+      "duplicates": "Some photographs repeat. Add other viewpoints.",
+      "quality": "Some photographs are unclear. Please retake them.",
+      "uncertain": "Some photographs could not be recognized reliably. Add clearer views."
+    }
+  }
+}

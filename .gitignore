@@ -1,0 +1,21 @@
+.venv/
+.env
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.uv-cache/
+.docker-local/
+models/*
+!models/.gitkeep
+datasets/**/*.jpg
+datasets/**/*.png
+reports/
+*.egg-info/
+data/
+datasets/**/*.csv
+datasets/**/*.html
+datasets/**/*.parquet
+datasets/**/.cache/
+
+*.zip
+/Фото для проверки пилота/

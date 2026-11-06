@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Фото автомобиля · Проверка ракурсов</title>
+<style>
+:root{font-family:Inter,Segoe UI,sans-serif;color:#e6edf7;background:#10151e;font-size:15px}*{box-sizing:border-box}body{margin:0}button,input,select{font:inherit}button{cursor:pointer;border:1px solid #344155;border-radius:9px;background:#253145;color:#edf3ff;padding:10px 15px}button:hover{background:#344259}button:disabled{opacity:.45;cursor:wait}.primary{background:#b8f27b;color:#14260b;border:0;font-weight:650}.primary:hover{background:#d2ffa4}input,select{border:1px solid #39485e;border-radius:8px;background:#151d2a;color:#edf3ff;padding:11px;max-width:100%}label{cursor:pointer}a{color:#b8f27b}.shell{display:grid;grid-template-columns:260px 1fr;min-height:100vh}aside{background:#141c28;border-right:1px solid #293347;padding:28px 18px}.brand{font-weight:700;font-size:20px;margin-bottom:4px}.muted{color:#a7b4c8;line-height:1.55}.small{font-size:13px}.session{display:block;width:100%;text-align:left;margin:9px 0;overflow:hidden;overflow-wrap:anywhere}.session.active{border-color:#b8f27b;background:#243327}.session small{display:block;color:#acb7c7;margin-top:4px}main{padding:36px 40px;max-width:1500px;width:100%}h1{font-size:32px;letter-spacing:-.8px;line-height:1.2;margin:8px 0 14px}h2{font-size:20px;margin:0 0 14px}h3{font-size:16px;margin:0 0 8px}.eyebrow{color:#b8f27b;font-size:12px;letter-spacing:1.4px;font-weight:650}.panel{background:#1a2331;border:1px solid #2d394c;border-radius:15px;padding:22px;margin-top:22px}.intro{max-width:700px}.row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}.between{justify-content:space-between}.grow{flex:1}.create input{width:100%;margin:12px 0}.consent{display:flex;align-items:flex-start;gap:9px;max-width:760px;font-size:13px;color:#acb9cd;line-height:1.5}.consent input{margin:3px 0 0;accent-color:#b8f27b}.drop{border:1px dashed #70849f;border-radius:12px;padding:30px;text-align:center;background:#17202d}.drop.drag{background:#293c2a;border-color:#b8f27b}.drop p{margin:8px 0 16px}.pill{display:inline-block;font-size:12px;border-radius:25px;padding:5px 9px;background:#2b3545;color:#c5cfdf}.good{background:#25472d;color:#b8f2a5}.warn{background:#4b3b22;color:#f6d38b}.error{color:#ffb7b7}.banner{padding:13px 17px;border-radius:10px;background:#3c292e;color:#ffd4d4;line-height:1.5;margin:16px 0}.info{background:#213349;color:#c6dffc}.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.stat{background:#151e2a;border-radius:10px;padding:14px}.stat b{font-size:27px;display:block;margin-bottom:4px}.checklist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:16px}.angle{padding:14px;border:1px solid #334155;border-radius:10px}.angle p{font-size:13px;line-height:1.5;margin:8px 0 0;color:#acb9cd}.photos{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:18px}.photo{overflow:hidden;padding:0}.photo img{width:100%;height:210px;object-fit:contain;background:#0e141d;display:block}.photo .content{padding:16px}.photo .filename{overflow-wrap:anywhere;font-size:13px;color:#a8b6cb;margin-bottom:10px}.photo select{width:100%;margin:10px 0}.photo .row button{flex:1;font-size:13px;padding:9px}.photo .remove{background:transparent;border:0;color:#aeb9cc;flex:0}.statusline{min-height:24px;color:#b8f27b;margin:12px 0}.hidden{display:none!important}.foot{margin:28px 0 0;font-size:12px;color:#8e9db3}.empty{padding:35px 0;color:#aebbd0}.danger{color:#ffb8b8;background:transparent}.notice{font-size:13px;color:#f0d49a;line-height:1.5;margin-top:10px}@media(max-width:800px){.shell{grid-template-columns:1fr}aside{border-right:0;border-bottom:1px solid #293347;padding:18px}.brand{display:inline}#sessions{display:flex;overflow-x:auto;gap:8px}.session{min-width:180px;max-width:230px}.new{margin-top:10px}main{padding:22px 16px}h1{font-size:27px}.checklist{grid-template-columns:1fr}.summary{gap:6px}.stat{padding:10px}.stat b{font-size:24px}.panel{padding:17px}.photo{padding:0}}
+.photo{scroll-margin-top:20px}.photo:focus{outline:2px solid #b8f27b;outline-offset:3px}.photo h3{margin-top:12px}.feedback{margin:12px 0;padding:12px;border-radius:9px;background:#202d3e;font-size:13px;line-height:1.5}.feedback p{margin:5px 0 0;color:#bdc9db}.text-button{display:block;background:transparent;border:0;color:#b8f27b;padding:9px 0;text-align:left;overflow-wrap:anywhere;max-width:100%}.confirm{width:100%;margin-top:12px}.next-steps{margin-top:24px}details summary{cursor:pointer;color:#b8f27b;padding:12px 0}.angle h3{margin:10px 0 0}.photo .remove{display:block;margin-top:12px}button:focus-visible,select:focus-visible,summary:focus-visible{outline:2px solid #b8f27b;outline-offset:3px}
+main,aside{min-width:0}.summary{grid-template-columns:repeat(3,minmax(0,1fr))}.stat{min-width:0}.stat span{overflow-wrap:anywhere}.photos{grid-template-columns:repeat(auto-fill,minmax(min(270px,100%),1fr))}h1{overflow-wrap:anywhere}
+</style></head><body>
+<div class="shell"><aside><div class="brand">Фото автомобиля</div><p class="muted small">Проверка 12 ракурсов</p><button class="primary new" id="new">+ Новая проверка</button><div id="sessions"></div><p class="foot">Локальный пилот<br>Фотографии остаются на этом компьютере.</p></aside>
+<main><div class="eyebrow">ПОДГОТОВКА ОБЪЯВЛЕНИЯ</div><h1 id="heading">Все нужные ракурсы —<br>в одном месте</h1><p class="muted intro" id="intro">Загрузите фотографии машины. Мы подскажем, каких снимков не хватает, а вы сможете подтвердить или исправить ракурс каждого фото.</p>
+<div id="error" class="banner hidden" role="alert"></div><div id="status" class="statusline" role="status" aria-live="polite"></div>
+<section id="create" class="panel create"><h2>Начнём с автомобиля</h2><label for="title">Название проверки</label><input id="title" placeholder="Например, Toyota RAV4 · чёрный" maxlength="100"><p class="muted small">Достаточно марки и модели. Номер телефона, VIN и документы не нужны.</p><button id="start" class="primary">Добавить фотографии</button></section>
+<div id="workspace" class="hidden"><section class="panel"><div class="drop" id="drop"><h2>Добавьте фотографии машины</h2><p class="muted small">JPEG, PNG или WEBP · до 20 фото · до 12 МБ каждое</p><button id="choose">Выбрать фотографии</button><input id="files" class="hidden" type="file" accept="image/jpeg,image/png,image/webp" multiple><p class="muted small">Можно перетащить файлы сюда. Добавление или удаление фото потребует повторной проверки.</p></div><div class="row between" style="margin-top:18px"><span id="count" class="muted small"></span><button id="analyze" class="primary">Проверить ракурсы</button></div></section>
+<section id="results" class="panel hidden"><div class="row between"><h2>Что уже есть и что доснять</h2><span id="result-badge" class="pill warn">Подтвердите или исправьте ракурсы</span></div><div class="summary"><div class="stat"><b id="present">0</b><span class="small muted">из 12 собрано</span></div><div class="stat"><b id="uncertain">0</b><span class="small muted">ракурсов на проверке</span></div><div class="stat"><b id="missing">12</b><span class="small muted">ещё не показаны</span></div></div><p class="muted small">Модель может ошибаться. Предположение не закрывает ракурс, пока вы его не подтвердите. Нечёткие фото и повторные копии не засчитываются.</p><div id="notices"></div><div id="next-steps" class="next-steps"></div><details style="margin-top:18px"><summary style="cursor:pointer;color:#b8f27b;padding:8px 0">Какие ракурсы нужны и как их снять</summary><div id="checklist" class="checklist"></div></details></section>
+<section style="margin-top:28px"><h2>Фотографии и ракурсы</h2><div id="photos" class="photos"></div></section>
+<section class="panel"><h2>Ваши исправления</h2><p class="muted small">Подтверждения сохраняются локально. Они не запускают обучение автоматически.</p><label class="consent"><input type="checkbox" id="consent"><span>Я владелец этих фотографий или имею разрешение на их использование и разрешаю включить фото с моими исправлениями в будущий набор для обучения.</span></label><div class="row between" style="margin-top:18px"><button id="export">Скачать фото и исправления</button><button id="delete" class="danger">Удалить проверку и фото</button></div><p class="muted small">В выгрузку попадут только подтверждённые фото. Перед обучением их разметку нужно проверить. Разрешение можно снять до выгрузки; уже скачанный архив останется у вас.</p></section></div>
+<p class="foot">Проверяем наличие ракурсов. Состояние машины, ДТП и скрытые повреждения по этому результату не определяются.</p></main></div>
+<script src="/pilot-feedback.js"></script>
+<script>
+const token='__PILOT_TOKEN__';let state=null,busy=false;
+const titles={front:'Перед автомобиля',rear:'Зад автомобиля',left_side:'Левая сторона',right_side:'Правая сторона',engine_bay:'Моторный отсек',trunk:'Багажник',under_trunk:'Ниша под полом багажника',interior:'Салон',fender_front_left:'Переднее левое крыло',fender_front_right:'Переднее правое крыло',fender_rear_left:'Заднее левое крыло',fender_rear_right:'Заднее правое крыло',other:'Не подходит для нужных ракурсов'};
+const $=id=>document.getElementById(id);const el=(tag,text,cls)=>{const x=document.createElement(tag);if(text!==undefined)x.textContent=text;if(cls)x.className=cls;return x};
+async function api(path,options={}){const r=await fetch(path,{...options,headers:{'x-pilot-token':token,...(options.headers||{})}});if(!r.ok){let msg='Не удалось выполнить действие. Повторите попытку.';try{const j=await r.json();if(typeof j.detail==='string')msg=j.detail}catch{}throw new Error(msg)}return r}
+async function json(path,data,method='POST'){return(await api(path,{method,headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})).json()}
+function lock(value,message=''){busy=value;document.querySelectorAll('button,select,input').forEach(x=>x.disabled=value);$('status').textContent=message}
+async function action(fn,message=''){if(busy)return;lock(true,message);$('error').classList.add('hidden');try{await fn()}catch(e){$('error').textContent=e.message;$('error').classList.remove('hidden');if(state){try{state=await(await api('/api/sessions/'+state.id)).json();render()}catch{}}}finally{lock(false)}}
+async function sessions(){const list=await(await api('/api/sessions')).json();$('sessions').replaceChildren();for(const s of list){const b=el('button',undefined,'session'+(state?.id===s.id?' active':''));b.append(el('span',s.title),el('small',s.photo_count+' фото'));b.onclick=()=>action(()=>open(s.id),'Открываем проверку…');$('sessions').append(b)}}
+async function open(id){state=await(await api('/api/sessions/'+id)).json();history.replaceState(null,'','/#'+id);render();await sessions()}
+function focusPhoto(id) {
+  const card = document.getElementById('photo-' + id);
+  if (card) { card.scrollIntoView({behavior:'smooth',block:'center'}); card.focus({preventScroll:true}); }
+}
+function photoButton(id, title) {
+  const button = el('button', title, 'text-button');
+  button.onclick = () => focusPhoto(id);
+  return button;
+}
+function renderPhoto(photo, prediction) {
+  const card = el('article', undefined, 'photo panel');
+  card.id = 'photo-' + photo.id;
+  card.tabIndex = -1;
+  const image = el('img');
+  image.src = '/media/' + state.id + '/' + photo.id;
+  image.alt = photo.filename;
+  image.loading = 'lazy';
+  const content = el('div', undefined, 'content');
+  const feedback = pilotFeedback.describe(photo, prediction, state.photos);
+  content.append(el('div', photo.filename, 'filename'),
+    el('span', feedback.title, 'pill ' + feedback.tone));
+  if (prediction) {
+    content.append(el('h3', titles[prediction.candidate] || 'Ракурс не определён'));
+    if (photo.decision && titles[prediction.model_candidate] && photo.decision !== prediction.model_candidate) {
+      content.append(el('p', 'Модель предполагала: ' + titles[prediction.model_candidate], 'muted small'));
+    }
+  }
+  for (const [title, detail] of feedback.reasons) {
+    const reason = el('div', undefined, 'feedback');
+    reason.append(el('strong', title), el('p', detail));
+    content.append(reason);
+  }
+  if (prediction?.duplicate_of) content.append(photoButton(prediction.duplicate_of, 'Перейти к основному снимку'));
+  if (prediction && !prediction.error) {
+    const select = el('select');
+    select.setAttribute('aria-label', 'Ракурс: ' + photo.filename);
+    select.append(new Option('Выберите правильный ракурс…', ''));
+    for (const [id, title] of Object.entries(titles)) select.append(new Option(title, id));
+    select.value = photo.decision || '';
+    if (feedback.canConfirm && !photo.decision && titles[prediction.candidate] && prediction.candidate !== 'other') {
+      const confirm = el('button', 'Подтвердить: ' + titles[prediction.candidate], 'confirm');
+      confirm.onclick = () => decision(photo.id, prediction.candidate);
+      content.append(confirm);
+    }
+    const save = el('button', 'Сохранить выбранный ракурс');
+    save.onclick = () => {
+      if (!select.value) {
+        $('error').textContent = 'Сначала выберите ракурс для этого фото.';
+        $('error').classList.remove('hidden');
+        select.focus();
+        return;
+      }
+      decision(photo.id, select.value);
+    };
+    content.append(select, save);
+  }
+  const remove = el('button', 'Удалить фото', 'remove');
+  remove.onclick = () => action(async () => {
+    await api('/api/sessions/' + state.id + '/photos/' + photo.id, {method:'DELETE'});
+    await open(state.id);
+  }, 'Удаляем фото…');
+  content.append(remove);
+  card.append(image, content);
+  return card;
+}
+function renderNextSteps(report) {
+  const target = $('next-steps');
+  target.replaceChildren();
+  const steps = pilotFeedback.nextSteps(report);
+  if (!steps.length) {
+    target.append(el('p', 'Все 12 ракурсов собраны. Проверьте замечания к отдельным фото, если они остались.', 'notice good'));
+    return;
+  }
+  target.append(el('h3', 'Что сделать дальше'));
+  const first = el('div', undefined, 'checklist');
+  const rest = el('div', undefined, 'checklist');
+  steps.forEach((category, index) => {
+    const item = el('div', undefined, 'angle');
+    const candidates = (report.photo_results || []).filter(p => category.uncertain_photo_ids.includes(p.photo_id));
+    const blocked = category.status === 'uncertain' && candidates.length > 0
+      && candidates.every(p => p.error || p.quality !== 'good' || p.duplicate_of);
+    item.append(el('span', blocked ? 'Устраните замечание к фото' : category.status === 'uncertain' ? 'Проверьте имеющееся фото' : 'Добавьте снимок', 'pill warn'),
+      el('h3', category.title), el('p', category.hint));
+    if (category.status === 'uncertain') {
+      item.append(el('p', blocked ? 'Имеющиеся снимки не засчитаны. Откройте замечание на карточке и добавьте подходящее фото.'
+        : 'Сначала подтвердите или исправьте ракурс. Если фото не подходит, снимите замену.'));
+      for (const id of category.uncertain_photo_ids) {
+        const photo = state.photos.find(p => p.id === id);
+        if (photo) item.append(photoButton(id, 'Проверить «' + photo.filename + '»'));
+      }
+    }
+    (index < 3 ? first : rest).append(item);
+  });
+  target.append(first);
+  if (steps.length > 3) {
+    const details = el('details');
+    details.append(el('summary', 'Ещё ракурсы: ' + (steps.length - 3)), rest);
+    target.append(details);
+  }
+}
+function render() {
+  const active = !!state;
+  $('create').classList.toggle('hidden', active);
+  $('workspace').classList.toggle('hidden', !active);
+  $('heading').textContent = active ? state.title : 'Все нужные ракурсы — в одном месте';
+  $('intro').classList.toggle('hidden', active);
+  if (!active) return;
+  $('count').textContent = state.photos.length + ' из 20 фото';
+  $('consent').checked = state.training_permission;
+  const report = state.report;
+  $('results').classList.toggle('hidden', !report);
+  $('photos').replaceChildren();
+  if (!state.photos.length) $('photos').append(el('p', 'Добавьте первые фотографии, чтобы начать.', 'empty'));
+  const predictions = new Map((report?.photo_results || []).map(p => [p.photo_id, p]));
+  for (const photo of state.photos) $('photos').append(renderPhoto(photo, predictions.get(photo.id)));
+  if (!report) return;
+  $('present').textContent = report.required.present.length;
+  $('uncertain').textContent = report.required.uncertain.length;
+  $('missing').textContent = report.required.missing.length;
+  const complete = report.required.present.length === 12;
+  $('result-badge').textContent = complete ? 'Все ракурсы собраны' : 'Подтвердите или исправьте ракурсы';
+  $('result-badge').className = 'pill ' + (complete ? 'good' : 'warn');
+  $('checklist').replaceChildren();
+  $('notices').replaceChildren();
+  for (const notice of report.notices) {
+    const text = notice.startsWith('Несколько фотографий повторяются')
+      ? 'Повторные копии не увеличивают число ракурсов. Основной снимок указан на карточке.'
+      : !report.model.calibrated && notice.startsWith('Не удалось уверенно')
+        ? 'Проверьте предложенные ракурсы на карточках ниже. Если вариант не подходит, выберите другой.' : notice;
+    $('notices').append(el('p', text, 'notice'));
+  }
+  renderNextSteps(report);
+  for (const category of report.categories) {
+    const item = el('div', undefined, 'angle');
+    item.append(el('span', category.status === 'present' ? 'Подтверждено' : category.status === 'uncertain' ? 'Проверьте фото' : 'Нужно доснять',
+      'pill ' + (category.status === 'present' ? 'good' : 'warn')), el('h3', category.title), el('p', category.hint));
+    $('checklist').append(item);
+  }
+}
+function decision(id,label){action(async()=>{state=await json('/api/sessions/'+state.id+'/photos/'+id+'/decision',{label,revision:state.revision});render()},'Сохраняем ракурс…')}
+$('new').onclick=()=>action(async()=>{state=null;history.replaceState(null,'','/');render();await sessions();$('title').focus()});
+$('start').onclick=()=>action(async()=>{const title=$('title').value.trim();if(!title)throw new Error('Введите название проверки.');const s=await json('/api/sessions',{title});await open(s.id)},'Создаём проверку…');
+$('title').onkeydown=e=>{if(e.key==='Enter')$('start').click()};$('choose').onclick=()=>$('files').click();
+async function upload(files){const batch=[...files];if(!batch.length)return;await action(async()=>{if(state.photos.length+batch.length>20)throw new Error('Можно добавить до 20 фото на одну машину.');const failed=[];for(let i=0;i<batch.length;i++){const f=batch[i];$('status').textContent='Загружаем '+(i+1)+' из '+batch.length+'…';try{if(f.size>12582912)throw new Error('Размер больше 12 МБ');await api('/api/sessions/'+state.id+'/photos',{method:'POST',headers:{'x-filename':encodeURIComponent(f.name)},body:f})}catch(e){failed.push(f.name+': '+e.message)}}await open(state.id);if(failed.length)throw new Error('Часть фото не загрузилась. '+failed.join(' · '))},'Загружаем фотографии…');$('files').value=''}
+$('files').onchange=e=>upload(e.target.files);$('drop').ondragover=e=>{e.preventDefault();if(!busy)$('drop').classList.add('drag')};$('drop').ondragleave=()=>$('drop').classList.remove('drag');$('drop').ondrop=e=>{e.preventDefault();$('drop').classList.remove('drag');if(!busy)upload(e.dataTransfer.files)};
+$('analyze').onclick=()=>action(async()=>{if(!state.photos.length)throw new Error('Сначала добавьте хотя бы одно фото.');state=await json('/api/sessions/'+state.id+'/analyze',{});render();$('results').scrollIntoView({behavior:'smooth',block:'start'})},'Проверяем фотографии. Это может занять несколько секунд…');
+$('consent').onchange=()=>action(async()=>{state=await json('/api/sessions/'+state.id+'/permission',{training_permission:$('consent').checked,revision:state.revision});render()},'Сохраняем разрешение…');
+$('export').onclick=()=>action(async()=>{const r=await api('/api/sessions/'+state.id+'/export');const url=URL.createObjectURL(await r.blob());const a=el('a');a.href=url;a.download='photo-feedback-'+state.id+'.zip';a.click();setTimeout(()=>URL.revokeObjectURL(url),10000)},'Готовим архив…');
+$('delete').onclick=()=>{if(confirm('Удалить эту проверку, все её фото и исправления с компьютера?'))action(async()=>{await api('/api/sessions/'+state.id,{method:'DELETE'});state=null;history.replaceState(null,'','/');render();await sessions()},'Удаляем проверку…')};
+action(async()=>{const id=location.hash.slice(1);if(/^[a-f0-9]{32}$/.test(id))await open(id);else await sessions()});
+</script></body></html>

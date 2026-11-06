@@ -1,0 +1,16 @@
+fastapi==0.115.12
+uvicorn==0.34.2
+pydantic==2.11.4
+pydantic-settings==2.9.1
+boto3==1.38.23
+Pillow==11.2.1
+numpy==2.2.6
+opencv-python-headless==4.11.0.86
+torch==2.7.0
+torchvision==0.22.0
+transformers==4.51.3
+safetensors==0.5.3
+huggingface-hub==0.31.4
+psutil==7.0.0
+aiokafka==0.12.0
+filelock==4.2.4

@@ -1,0 +1,9 @@
+{
+  "validated": false,
+  "dataset_id": null,
+  "model_version": null,
+  "taxonomy_hash": null,
+  "unknown_similarity": 0.18,
+  "classes": {},
+  "notes": "Bootstrap unknown threshold is a heuristic, not a measured probability. No category is confirmed until domain validation. Per-class min_similarity and min_margin must be measured on a separate calibration set; evaluate frozen policy on held-out vehicle-disjoint test data."
+}

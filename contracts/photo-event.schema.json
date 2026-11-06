@@ -1,0 +1,181 @@
+{
+  "$defs": {
+    "ObjectPhoto": {
+      "additionalProperties": false,
+      "properties": {
+        "photo_id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Photo Id",
+          "type": "string"
+        },
+        "object_key": {
+          "maxLength": 1024,
+          "minLength": 1,
+          "title": "Object Key",
+          "type": "string"
+        },
+        "version_id": {
+          "anyOf": [
+            {
+              "maxLength": 1024,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Version Id"
+        },
+        "etag": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Etag"
+        },
+        "bucket": {
+          "maxLength": 255,
+          "minLength": 1,
+          "title": "Bucket",
+          "type": "string"
+        },
+        "manual_category": {
+          "anyOf": [
+            {
+              "enum": [
+                "front",
+                "rear",
+                "left_side",
+                "right_side",
+                "engine_bay",
+                "trunk",
+                "under_trunk",
+                "interior",
+                "fender_front_left",
+                "fender_front_right",
+                "fender_rear_left",
+                "fender_rear_right"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Manual Category"
+        }
+      },
+      "required": [
+        "photo_id",
+        "object_key",
+        "bucket"
+      ],
+      "title": "ObjectPhoto",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1,
+      "default": 1,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "event_id": {
+      "maxLength": 128,
+      "minLength": 1,
+      "title": "Event Id",
+      "type": "string"
+    },
+    "correlation_id": {
+      "maxLength": 128,
+      "minLength": 1,
+      "title": "Correlation Id",
+      "type": "string"
+    },
+    "listing_id": {
+      "maxLength": 128,
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9_-]+$",
+      "title": "Listing Id",
+      "type": "string"
+    },
+    "listing_revision": {
+      "maximum": 9223372036854775807,
+      "minimum": 1,
+      "title": "Listing Revision",
+      "type": "integer"
+    },
+    "event_type": {
+      "enum": [
+        "image.upserted",
+        "image.deleted",
+        "photoset.finalized"
+      ],
+      "title": "Event Type",
+      "type": "string"
+    },
+    "image_id": {
+      "anyOf": [
+        {
+          "maxLength": 128,
+          "minLength": 1,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Image Id"
+    },
+    "photo": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ObjectPhoto"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "photos": {
+      "anyOf": [
+        {
+          "items": {
+            "$ref": "#/$defs/ObjectPhoto"
+          },
+          "maxItems": 100,
+          "type": "array"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Photos"
+    }
+  },
+  "required": [
+    "event_id",
+    "correlation_id",
+    "listing_id",
+    "listing_revision",
+    "event_type"
+  ],
+  "title": "PhotoEvent",
+  "type": "object"
+}

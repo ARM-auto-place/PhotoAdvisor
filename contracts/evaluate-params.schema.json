@@ -1,0 +1,89 @@
+{
+  "$defs": {
+    "Photo": {
+      "additionalProperties": false,
+      "properties": {
+        "photo_id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Photo Id",
+          "type": "string"
+        },
+        "object_key": {
+          "maxLength": 1024,
+          "minLength": 1,
+          "title": "Object Key",
+          "type": "string"
+        },
+        "version_id": {
+          "anyOf": [
+            {
+              "maxLength": 1024,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Version Id"
+        },
+        "etag": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Etag"
+        }
+      },
+      "required": [
+        "photo_id",
+        "object_key"
+      ],
+      "title": "Photo",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "listing_id": {
+      "maxLength": 128,
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9_-]+$",
+      "title": "Listing Id",
+      "type": "string"
+    },
+    "photos": {
+      "items": {
+        "$ref": "#/$defs/Photo"
+      },
+      "maxItems": 100,
+      "title": "Photos",
+      "type": "array"
+    },
+    "locale": {
+      "default": "ru",
+      "enum": [
+        "ru",
+        "en",
+        "hy"
+      ],
+      "title": "Locale",
+      "type": "string"
+    }
+  },
+  "required": [
+    "listing_id",
+    "photos"
+  ],
+  "title": "EvaluateParams",
+  "type": "object"
+}

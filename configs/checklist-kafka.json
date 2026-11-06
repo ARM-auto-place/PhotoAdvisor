@@ -1,0 +1,271 @@
+{
+  "version": 1,
+  "categories": [
+    {
+      "id": "front",
+      "priority": "required",
+      "title": {
+        "ru": "Перед автомобиля",
+        "en": "Front"
+      },
+      "hint": {
+        "en": "Photograph the whole car straight from the front, with the camera centered and the bumper in frame.",
+        "ru": "Снимите автомобиль целиком спереди: камера по центру, бампер полностью в кадре."
+      },
+      "conditional": false
+    },
+    {
+      "id": "rear",
+      "priority": "required",
+      "title": {
+        "ru": "Зад автомобиля",
+        "en": "Rear"
+      },
+      "hint": {
+        "en": "Photograph the whole car straight from the rear, with the camera centered and the bumper in frame.",
+        "ru": "Снимите автомобиль целиком сзади: камера по центру, бампер полностью в кадре."
+      },
+      "conditional": false
+    },
+    {
+      "id": "left_side",
+      "priority": "required",
+      "title": {
+        "ru": "Левая сторона",
+        "en": "Left side"
+      },
+      "hint": {
+        "en": "Photograph the entire left side square-on, with both wheels visible. Left means the car's left when facing forward.",
+        "ru": "Снимите левый бок целиком, строго сбоку, с обоими колёсами. Стороны определяются по направлению движения машины."
+      },
+      "conditional": false
+    },
+    {
+      "id": "right_side",
+      "priority": "required",
+      "title": {
+        "ru": "Правая сторона",
+        "en": "Right side"
+      },
+      "hint": {
+        "en": "Photograph the entire right side square-on, with both wheels visible. Right means the car's right when facing forward.",
+        "ru": "Снимите правый бок целиком, строго сбоку, с обоими колёсами. Стороны определяются по направлению движения машины."
+      },
+      "conditional": false
+    },
+    {
+      "id": "engine_bay",
+      "priority": "required",
+      "title": {
+        "ru": "Моторный отсек",
+        "en": "Engine bay"
+      },
+      "hint": {
+        "en": "Open the hood and photograph the whole engine compartment from above.",
+        "ru": "Откройте капот и снимите моторный отсек целиком сверху."
+      },
+      "conditional": false
+    },
+    {
+      "id": "trunk",
+      "priority": "required",
+      "title": {
+        "ru": "Багажник",
+        "en": "Trunk"
+      },
+      "hint": {
+        "en": "Open the trunk and photograph the cargo space with its floor and side walls visible.",
+        "ru": "Откройте багажник и снимите грузовое пространство так, чтобы были видны пол и боковые стенки."
+      },
+      "conditional": false
+    },
+    {
+      "id": "under_trunk",
+      "priority": "required",
+      "title": {
+        "en": "Compartment under the trunk floor",
+        "ru": "Ниша под полом багажника"
+      },
+      "hint": {
+        "en": "Lift or remove the trunk floor panel and photograph the compartment underneath. A spare tire sitting on the cargo floor does not show this view.",
+        "ru": "Поднимите или снимите панель пола багажника и сфотографируйте нишу под ней. Запаска поверх пола не показывает нужный ракурс."
+      },
+      "conditional": false
+    },
+    {
+      "id": "interior",
+      "priority": "required",
+      "title": {
+        "en": "Cabin",
+        "ru": "Салон"
+      },
+      "hint": {
+        "en": "Photograph the cabin so the seats and dashboard are visible. A close-up of a button or screen is insufficient.",
+        "ru": "Снимите салон общим планом, чтобы были видны сиденья и передняя панель. Крупного плана кнопки или экрана недостаточно."
+      },
+      "conditional": false
+    },
+    {
+      "id": "fender_front_left",
+      "priority": "required",
+      "title": {
+        "en": "Front left fender close-up",
+        "ru": "Переднее левое крыло крупным планом"
+      },
+      "hint": {
+        "en": "Take a close-up of the panel around the front left wheel arch, including the adjacent door edge and front end to show its position.",
+        "ru": "Снимите крупно панель вокруг передней левой арки. Оставьте в кадре край соседней двери и передка, чтобы было понятно положение крыла."
+      },
+      "conditional": false
+    },
+    {
+      "id": "fender_front_right",
+      "priority": "required",
+      "title": {
+        "en": "Front right fender close-up",
+        "ru": "Переднее правое крыло крупным планом"
+      },
+      "hint": {
+        "en": "Take a close-up of the panel around the front right wheel arch, including the adjacent door edge and front end to show its position.",
+        "ru": "Снимите крупно панель вокруг передней правой арки. Оставьте в кадре край соседней двери и передка, чтобы было понятно положение крыла."
+      },
+      "conditional": false
+    },
+    {
+      "id": "fender_rear_left",
+      "priority": "required",
+      "title": {
+        "en": "Rear left fender close-up",
+        "ru": "Заднее левое крыло крупным планом"
+      },
+      "hint": {
+        "en": "Take a close-up of the panel around the rear left wheel arch, including the adjacent door edge and rear light to show its position.",
+        "ru": "Снимите крупно панель вокруг задней левой арки. Оставьте в кадре край соседней двери и задний фонарь, чтобы было понятно положение крыла."
+      },
+      "conditional": false
+    },
+    {
+      "id": "fender_rear_right",
+      "priority": "required",
+      "title": {
+        "en": "Rear right fender close-up",
+        "ru": "Заднее правое крыло крупным планом"
+      },
+      "hint": {
+        "en": "Take a close-up of the panel around the rear right wheel arch, including the adjacent door edge and rear light to show its position.",
+        "ru": "Снимите крупно панель вокруг задней правой арки. Оставьте в кадре край соседней двери и задний фонарь, чтобы было понятно положение крыла."
+      },
+      "conditional": false
+    }
+  ],
+  "classes": {
+    "front": [
+      "a photo of the front of a car, headlights and front grille visible",
+      "a head-on front view of a parked automobile"
+    ],
+    "rear": [
+      "a photo of the rear of a car with taillights and trunk lid",
+      "a straight rear view of a parked automobile"
+    ],
+    "left_side": [
+      "a full left side profile of a car, front pointing left",
+      "a photo of the driver side profile of a left hand drive car"
+    ],
+    "right_side": [
+      "a full right side profile of a car, front pointing right",
+      "a photo of the passenger side profile of a left hand drive car"
+    ],
+    "engine_bay": [
+      "a photo of a car engine bay with the hood open",
+      "a view under the open hood showing an automobile engine"
+    ],
+    "trunk": [
+      "a photograph of an open car trunk cargo space",
+      "the inside of a car luggage compartment with trunk open"
+    ],
+    "under_trunk": [
+      "a photo of the spare wheel well under the lifted floor of an open car trunk",
+      "the exposed spare tire compartment below the cargo floor of a car"
+    ],
+    "interior": [
+      "a photo of the inside of a car showing seats and cabin",
+      "a photograph of a vehicle passenger interior"
+    ],
+    "fender_front_left": [
+      "a close-up photo of the front left fender body panel around a car wheel, left relative to vehicle forward direction",
+      "a detailed close-up photograph of the left front wheel arch and fender panel, not the complete car"
+    ],
+    "fender_front_right": [
+      "a close-up photo of the front right fender body panel around a car wheel, right relative to vehicle forward direction",
+      "a detailed close-up photograph of the right front wheel arch and fender panel, not the complete car"
+    ],
+    "fender_rear_left": [
+      "a close-up photo of the rear left fender body panel around a car wheel, left relative to vehicle forward direction",
+      "a detailed close-up photograph of the left rear wheel arch and fender panel, not the complete car"
+    ],
+    "fender_rear_right": [
+      "a close-up photo of the rear right fender body panel around a car wheel, right relative to vehicle forward direction",
+      "a detailed close-up photograph of the right rear wheel arch and fender panel, not the complete car"
+    ],
+    "front_left": [
+      "a front left three-quarter view of a complete car",
+      "a parked automobile photographed diagonally from the front left corner"
+    ],
+    "front_right": [
+      "a front right three-quarter view of a complete car",
+      "a parked automobile photographed diagonally from the front right corner"
+    ],
+    "rear_left": [
+      "a rear left three-quarter view of a complete car",
+      "a parked automobile photographed diagonally from the rear left corner"
+    ],
+    "rear_right": [
+      "a rear right three-quarter view of a complete car",
+      "a parked automobile photographed diagonally from the rear right corner"
+    ],
+    "wheels": [
+      "a close-up photograph of a car wheel and tire tread",
+      "a detailed photo of an automobile tire and wheel rim"
+    ],
+    "exterior_details": [
+      "a close-up photo of a car headlight or side mirror",
+      "a detailed photo of automobile exterior trim"
+    ],
+    "other": [
+      "a photo of a person, animal, food, document, or landscape without a car",
+      "a screenshot, drawing, advertisement or unrelated object"
+    ],
+    "closed_hood": [
+      "a close-up photo of a closed car hood with no engine visible"
+    ],
+    "closed_trunk": [
+      "a photo of a closed car trunk lid from outside"
+    ]
+  },
+  "coverage": {
+    "front": "front",
+    "rear": "rear",
+    "left_side": "left_side",
+    "right_side": "right_side",
+    "engine_bay": "engine_bay",
+    "trunk": "trunk",
+    "under_trunk": "under_trunk",
+    "interior": "interior",
+    "fender_front_left": "fender_front_left",
+    "fender_front_right": "fender_front_right",
+    "fender_rear_left": "fender_rear_left",
+    "fender_rear_right": "fender_rear_right"
+  },
+  "messages": {
+    "ru": {
+      "duplicates": "Несколько фотографий повторяются. Добавьте другие ракурсы.",
+      "quality": "Некоторые фотографии нечёткие или плохо различимы. Переснимите их.",
+      "uncertain": "Не удалось уверенно определить содержимое части фотографий. Добавьте более понятные снимки."
+    },
+    "en": {
+      "duplicates": "Some photographs repeat. Add other viewpoints.",
+      "quality": "Some photographs are unclear. Please retake them.",
+      "uncertain": "Some photographs could not be recognized reliably. Add clearer views."
+    }
+  }
+}
