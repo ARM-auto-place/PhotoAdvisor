@@ -7,9 +7,9 @@ on:
 permissions:
   contents: read
 
-# Serialize the entire release, including build, to avoid overlapping deployments.
+# Serialize repeated runs for the same release tag.
 concurrency:
-  group: release-production
+  group: release-${{ github.ref }}
   cancel-in-progress: false
 
 defaults:
@@ -50,8 +50,6 @@ jobs:
     permissions:
       contents: read
       packages: write
-    outputs:
-      reference: ${{ steps.name.outputs.image }}@${{ steps.build.outputs.digest }}
     steps:
       - uses: actions/checkout@v6
       - name: Image name
@@ -85,27 +83,3 @@ jobs:
           labels: org.opencontainers.image.source=${{ github.server_url }}/${{ github.repository }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
-
-  deploy:
-    needs: image
-    runs-on: ubuntu-latest
-    timeout-minutes: 20
-    environment: production
-    concurrency:
-      group: deploy-production
-      cancel-in-progress: false
-    steps:
-      - uses: actions/checkout@v6
-      - name: Deploy selected Compose service
-        env:
-          DEPLOY_HOST: ${{ vars.DEPLOY_HOST }}
-          DEPLOY_USER: ${{ vars.DEPLOY_USER }}
-          DEPLOY_PORT: ${{ vars.DEPLOY_PORT || '22' }}
-          DEPLOY_PATH: ${{ vars.DEPLOY_PATH }}
-          COMPOSE_FILE: ${{ vars.COMPOSE_FILE }}
-          COMPOSE_PROJECT_NAME: ${{ vars.COMPOSE_PROJECT_NAME }}
-          COMPOSE_SERVICE: ${{ vars.COMPOSE_SERVICE }}
-          SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
-          SSH_KNOWN_HOSTS: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
-          IMAGE: ${{ needs.image.outputs.reference }}
-        run: bash .github/scripts/deploy.sh

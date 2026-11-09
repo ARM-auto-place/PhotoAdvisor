@@ -21,6 +21,6 @@ Model v19 uses the twelve-view checklist. Automatic acceptance is disabled. The 
 
 Install `requirements-dev.txt`, then run `python -m pytest -q` and `ruff check app scripts tests`. Run `node --test tests/pilot_feedback.test.cjs` for the pilot interface checks. Two tests for local data and older model artifacts skip in a clean checkout.
 
-## CI/CD и Docker Compose
+## CI и релизы
 
-Проверки, публикация Docker-образов и автоматический деплой по тегу `v*`: [настройка CI/CD](docs/ci-cd.md).
+Проверки и публикация Docker-образов по тегу `v*`: [настройка CI и релизов](docs/ci-cd.md). Обновление сервера выполняется отдельно.
