@@ -23,4 +23,4 @@ Install `requirements-dev.txt`, then run `python -m pytest -q` and `ruff check a
 
 ## CI/CD и Docker Compose
 
-Проверки, публикация Docker-образов и ручной деплой: [настройка CI/CD](docs/ci-cd.md).
+Проверки, публикация Docker-образов и автоматический деплой по тегу `v*`: [настройка CI/CD](docs/ci-cd.md).

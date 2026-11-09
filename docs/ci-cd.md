@@ -2,15 +2,23 @@
 
 ## Поведение
 
-- Pull request: существующие Python-проверки, затем сборка linux/amd64 Docker-образа без публикации. PhotoAdvisor также запускает Node-тесты интерфейса.
-- Push в основную ветку: те же проверки, затем публикация `ghcr.io/arm-auto-place/photoadvisor:sha-<полный SHA коммита>`.
-- Push в develop (где настроен): проверки и сборка без публикации.
-- Actions → ML service CI/CD → Run workflow на основной ветке → `deploy=true`: проверки, публикация и деплой **того же образа по digest** в environment `production`.
-- Деплой выполняется только вручную с основной ветки, после успешных проверок и сборки. Обновляется один Compose-сервис через `--no-deps --no-build`; база, Kafka, S3 и другие сервисы не перезапускаются.
+- `ci.yml` (ML service CI): pull request и push в настроенные ветки запускают проверки и сборку linux/amd64 без публикации. Задачи deploy в этом workflow нет.
+- `release.yml` (ML service release): **push тега `v*`**, например `v1.2.0`, запускает проверки, сборку и публикацию `ghcr.io/arm-auto-place/photoadvisor:v1.2.0` и `:sha-<SHA>`, затем автоматический деплой по digest.
+- Тег должен иметь Docker-совместимое имя: `v` и от 1 до 127 букв, цифр, точек, дефисов или подчёркиваний. Например `v1.2.0` или `v1.2.0-rc.1`; prerelease-теги тоже деплоятся в production.
+- Деплой обновляет один Compose-сервис через `--no-deps --no-build`, после успешных проверок и публикации. База, Kafka, S3 и другие сервисы не перезапускаются.
+
+Создавайте новый тег на нужном проверенном коммите, содержащем `release.yml`, и отправляйте его отдельно:
+
+```bash
+git tag -a v1.2.0 -m "Release v1.2.0"
+git push origin v1.2.0
+```
+
+Локальное создание тега без push ничего не запускает. Для нового релиза используйте новый номер; не переносите опубликованные теги на другие коммиты.
 
 ## Настройки GitHub
 
-Создайте environment `production`. При необходимости включите reviewers и ограничьте deployment branches основной веткой. Добавьте environment variables:
+Создайте environment `production`. В Deployment branches and tags разрешите теги `v*` (Selected branches and tags → Add deployment tag rule). Правило только для основной ветки не пропустит релизный тег. Для полностью автоматического деплоя не включайте обязательное ручное подтверждение reviewers. Ограничьте право создавать/изменять релизные теги через repository ruleset доверенным участникам. Добавьте environment variables:
 
 | Variable | Значение |
 | --- | --- |
